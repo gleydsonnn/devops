@@ -1,0 +1,12 @@
+---
+- name: adicionando os diretorios para o volume do blue green deploy
+  hosts: docker
+  tasks:
+   - name: adicionando os diretorios blue e green
+     file:
+      path: "{{item}}"
+      state: directory
+     with_items:
+      - /blue
+      - /green
+     
